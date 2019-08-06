@@ -1,0 +1,41 @@
+version: '2'
+services:
+
+    mysql-bday-alert:
+        image: dmoutinho/mysql-bday-alert
+        container_name: mysql-bday-alert
+        environment:
+            - MYSQL_ROOT_PASSWORD=root
+        networks: 
+            - bday-alert-network
+        ports:
+            - 3306:3306
+
+    bday-alert:
+        image: dmoutinho/bday-alert
+        container_name: bday-alert
+        environment:
+            - MYSQL_HOST=mysql-bday-alert
+        networks: 
+            - bday-alert-network
+        ports:
+            - 9080:9080
+        depends_on:
+            - "mysql-bday-alert"
+
+    bday-alert-client:
+        image: dmoutinho/bday-alert-client
+        container_name: bday-alert-client
+        environment:
+            - API_BDAY_ALERT=bday-alert
+        networks: 
+            - bday-alert-network
+        ports:
+            - 80:80
+        depends_on:
+            - "bday-alert"
+
+networks: 
+
+    bday-alert-network:
+        driver: bridge
