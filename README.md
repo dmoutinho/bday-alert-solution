@@ -9,10 +9,6 @@
 
 ## Docker Compose
 
-<p align="center">
-  <img src="https://docs.google.com/drawings/d/e/2PACX-1vSzTCFgX_-1e3cJzBIF8zihhGvvZhHPHad0rp6Ep8PFB2K7REnZa453XVBiY9celLDgKvL8M8oIupkh/pub?w=553&h=275">
-</p>
-
 1- Copy docker-compose.yml:
 ```sh
 $ curl https://raw.githubusercontent.com/dmoutinho/bday-alert-solution/master/docker-compose/docker-compose.yml > docker-compose.yml
@@ -29,6 +25,10 @@ $ docker-compose up
 ```sh
 $ docker-compose ps
 ```
+
+<p align="center">
+  <img src="https://docs.google.com/drawings/d/e/2PACX-1vSzTCFgX_-1e3cJzBIF8zihhGvvZhHPHad0rp6Ep8PFB2K7REnZa453XVBiY9celLDgKvL8M8oIupkh/pub?w=553&h=275">
+</p>
 
 4- Stop docker-compose.yml:
 
